@@ -15,7 +15,7 @@ const props = defineProps<{
       <NuxtImg
           provider="s3Provider"
           format="webp"
-          class="min-w-25 max-w-25 transition active:scale-95"
+          class="min-w-[100px] max-w-[100px] transition active:scale-95"
           width="100"
           height="100"
           :src="service.image"

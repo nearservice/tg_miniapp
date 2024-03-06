@@ -7,7 +7,7 @@ export default {
       spacing: {
         '25': '6.25rem',
         '6.5px': '6.5px'
-      }
+      },
     },
     fontFamily: {
       'mazzard': ['Mazzard'],

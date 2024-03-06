@@ -8,6 +8,10 @@ html, body {
   }
 }
 
+html {
+  touch-action: manipulation;
+}
+
 body {
   overflow: hidden;
   background-image: url("../../public/background.webp");
