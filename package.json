@@ -12,16 +12,22 @@
     "postinstall": "nuxt prepare"
   },
   "devDependencies": {
-    "@types/node": "^18",
-    "autoprefixer": "^10.4.14",
-    "nuxt": "^3.4.2",
-    "postcss": "^8.4.23",
-    "tailwindcss": "^3.3.2",
-    "turbo": "^1.9.3"
+    "@nuxtjs/tailwindcss": "^6.11.4",
+    "@types/node": "^20.11.20",
+    "autoprefixer": "^10.4.17",
+    "nuxt": "^3.10.3",
+    "postcss": "^8.4.35",
+    "sass": "^1.71.1",
+    "tailwindcss": "^3.4.1",
+    "turbo": "^1.12.4"
   },
   "dependencies": {
-    "@vercel/postgres": "^0.1.3",
+    "@nuxt/image": "^1.3.0",
+    "@pinia/nuxt": "^0.5.1",
+    "@vercel/postgres": "^0.7.2",
     "ms": "^2.1.3",
-    "ws": "^8.13.0"
+    "pinia": "^2.1.7",
+    "telegram-webapps-types": "^1.0.5",
+    "ws": "^8.16.0"
   }
 }

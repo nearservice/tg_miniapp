@@ -1,0 +1,39 @@
+@font-face {
+  font-family: 'Mazzard Soft';
+  src: local('Mazzard Soft  Light'), local('Mazzard-Soft--Light'),
+  url('../fonts/MazzardSoftM-Light.woff2') format('woff2'),
+  url('../fonts/MazzardSoftM-Light.woff') format('woff'),
+  url('../fonts/MazzardSoftM-Light.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Mazzard';
+  src: local('Mazzard M Regular'), local('Mazzard-M-Regular'),
+  url('../fonts/MazzardM-Regular.woff2') format('woff2'),
+  url('../fonts/MazzardM-Regular.woff') format('woff'),
+  url('../fonts/MazzardM-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Mazzard';
+  src: local('Mazzard M Medium'), local('Mazzard-M-Medium'),
+  url('../fonts/MazzardM-Medium.woff2') format('woff2'),
+  url('../fonts/MazzardM-Medium.woff') format('woff'),
+  url('../fonts/MazzardM-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Mazzard';
+  src: local('Mazzard M SemiBold'), local('Mazzard-M-SemiBold'),
+  url('../fonts/MazzardM-SemiBold.woff2') format('woff2'),
+  url('../fonts/MazzardM-SemiBold.woff') format('woff'),
+  url('../fonts/MazzardM-SemiBold.ttf') format('truetype');
+  font-weight: 600;
+  font-style: normal;
+}

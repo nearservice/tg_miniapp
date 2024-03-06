@@ -1,62 +1,66 @@
+<script setup lang="ts">
+const webAppStore = useWebAppStore()
+
+let closeWebApp = () => {
+  console.log("Not initialized yet")
+}
+
+const { data: page } = useFetch("/api/get-page")
+
+onMounted(() => {
+  closeWebApp = () => {
+    if (webAppStore.webApp) {
+      webAppStore.webApp.close()
+    }
+  }
+})
+</script>
+
 <template>
-  <main
-    class="relative flex flex-col items-center justify-center min-h-screen py-10"
-  >
-    <a
-      href="https://vercel.com"
-      class="px-6 py-2 text-sm font-medium text-gray-600 transition-all rounded-full shadow-sm bg-white/30 dark:bg-white/80 ring-1 ring-gray-900/5 dark:text-black hover:shadow-lg active:shadow-sm"
-    >
-      Deploy your own to Vercel
-    </a>
-    <h1
-      class="pt-4 pb-8 bg-gradient-to-br dark:from-white from-black via-[#707070] to-[#ffffff] bg-clip-text text-center text-4xl font-medium tracking-tight text-transparent md:text-7xl"
-    >
-      Postgres on Vercel
-    </h1>
-    <Table :users="data?.users" :duration="data?.duration" />
-    <div
-      class="w-full max-w-lg mt-6 font-light text-center text-gray-600 dark:text-gray-300"
-    >
-      Simple hello world demo of
-      <a
-        href="https://vercel.com/postgres"
-        class="font-medium underline transition-colors underline-offset-4 dark:hover:text-white hover:text-black"
-      >
-        Vercel Postgres
-      </a>
-      <div class="flex items-center justify-center my-2">
-        <span>Built with</span>
-        <a
-          href="https://nuxt.com/docs"
-          class="flex items-center font-medium underline transition-colors underline-offset-4 dark:hover:text-white hover:text-black"
-        >
-          <img src="/nuxt.svg" class="h-6 mx-2" />
-          <p>Nuxt</p>
-        </a>
-        .
-      </div>
-    </div>
-    <div class="flex flex-col grow">
-      <a href="https://vercel.com">
-        <img
-          src="/vercel.svg"
-          alt="Vercel Logo"
-          class="my-2 text-white dark:text-white"
-          width="{100}"
-          height="{24}"
-        />
-      </a>
-      <a
-        href="https://github.com/vercel/examples/tree/main/storage/postgres-nuxt"
-        class="flex items-center h-8 mt-auto space-x-2 bottom-20 right-20"
-      >
-        <img src="/github.svg" alt="GitHub Logo" class="h-6 dark:invert" />
-        <p class="font-light">Source</p>
-      </a>
-    </div>
-  </main>
+      <header class="mb-8 text-center text-white font-mazzard">
+        <div class="container mx-auto px-6">
+          <div class="text-center mb-8">
+            <NuxtImg provider="s3Provider" class="mx-auto w-[3.75em]" :src="page?.info.logo" alt="logo"/>
+          </div>
+
+          <!-- TODO: тут ещё можно подумать font-normal или font-medium и потом удалить неиспользуемый     -->
+          <h1 class="mb-3 text-4xl font-medium leading-none tracking-[.0125em]">{{ page?.info.title }}</h1>
+          <h4 class="mb-6 text-base font-light font-soft">{{ page?.info.description }}</h4>
+
+          <div class="flex gap-1.5">
+            <button
+                class="flex-1 h-10 border border-white rounded-3xl uppercase text-xs font-medium leading-10 bg-white/[.15] active:scale-95 transition"
+                @click="closeWebApp"
+            >{{ page?.info.first_button ?? "Поработать с нами" }}</button>
+            <button
+                class="flex-1 h-10 border border-white rounded-3xl uppercase text-xs font-medium leading-10 bg-white/[.15] active:scale-95 transition"
+                @click="closeWebApp"
+            >{{ page?.info.second_button ?? "Позвать в тендер"}}</button>
+          </div>
+        </div>
+      </header>
+
+      <main class="mb-8 text-white font-semibold">
+        <section class="mb-8">
+          <div class="container mx-auto">
+            <h5 class="mb-5 px-6">Что мы делаем</h5>
+            <Services :services="page?.services ?? []"/>
+          </div>
+        </section>
+
+        <section>
+          <div class="container mx-auto px-6">
+            <h5 class="mb-5">Уже наши клиенты</h5>
+            <Clients :clients="page?.clients ?? []"/>
+          </div>
+        </section>
+      </main>
+
+  <footer>
+    <h1 class="py-4 text-center text-white font-mazzard text-4xl">{{ page.info.slogan }}</h1>
+  </footer>
 </template>
 
-<script setup>
-const { data } = useFetch('/api/get-users')
-</script>
+<style scoped lang="scss">
+
+</style>

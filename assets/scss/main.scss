@@ -1,0 +1,17 @@
+@import "fonts";
+
+html, body {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+body {
+  overflow: hidden;
+  background-image: url("../../public/background.webp");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
