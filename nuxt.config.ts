@@ -8,7 +8,7 @@ export default defineNuxtConfig({
   },
   runtimeConfig: {
     public: {
-      s3Url: 'https://85861061-near.s3.timeweb.cloud',
+      s3Url: 'https://a2868bae-near.s3.timeweb.cloud',
     },
   },
   image: {
