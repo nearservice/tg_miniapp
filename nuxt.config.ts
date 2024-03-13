@@ -17,7 +17,7 @@ export default defineNuxtConfig({
         name: 's3Provider',
         provider: '~/providers/s3-provider.ts',
         options: {
-          baseURL: "https://85861061-near.s3.timeweb.cloud"
+          baseURL: "https://a2868bae-near.s3.timeweb.cloud"
         }
       }
     }
