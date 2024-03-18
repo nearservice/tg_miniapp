@@ -28,14 +28,14 @@ onMounted(() => {
           <h4 class="mb-6 text-base font-light font-soft">{{ page?.info.description }}</h4>
 
           <div class="flex gap-1.5">
-            <button
+            <NuxtLink to="https://t.me/DashaiLisichki"
                 class="flex-1 h-10 border border-white rounded-3xl uppercase text-xs font-medium leading-10 bg-white/[.15] active:scale-95 transition"
                 @click="closeWebApp"
-            >{{ page?.info.first_button ?? "Поработать с нами" }}</button>
-            <button
+              >{{ page?.info.first_button ?? "Поработать с нами" }}</NuxtLink>
+            <NuxtLink to="https://t.me/DashaiLisichki"
                 class="flex-1 h-10 border border-white rounded-3xl uppercase text-xs font-medium leading-10 bg-white/[.15] active:scale-95 transition"
                 @click="closeWebApp"
-            >{{ page?.info.second_button ?? "Позвать в тендер"}}</button>
+            >{{ page?.info.second_button ?? "Позвать в тендер"}}</NuxtLink>
           </div>
         </div>
       </header>
