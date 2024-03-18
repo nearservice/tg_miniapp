@@ -11,7 +11,7 @@ const props = defineProps<{
       ref="carousel"
       class="scrollbar flex flex-nowrap gap-1 px-6 overflow-x-scroll overflow-y-hidden scroll-smooth"
   >
-    <NuxtLink v-for="service in services" to="https://t.me/ooovotetoda">
+    <NuxtLink v-for="service in services" to="https://t.me/DashaiLisichki">
       <NuxtImg
           provider="s3Provider"
           format="webp"
