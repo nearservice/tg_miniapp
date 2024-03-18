@@ -1,19 +1,5 @@
 <script setup lang="ts">
-const webAppStore = useWebAppStore()
-
-let closeWebApp = () => {
-  console.log("Not initialized yet")
-}
-
 const { data: page } = useFetch("/api/get-page")
-
-onMounted(() => {
-  closeWebApp = () => {
-    if (webAppStore.webApp) {
-      webAppStore.webApp.close()
-    }
-  }
-})
 </script>
 
 <template>
@@ -28,13 +14,11 @@ onMounted(() => {
           <h4 class="mb-6 text-base font-light font-soft">{{ page?.info.description }}</h4>
 
           <div class="flex gap-1.5">
+            <button
+                class="flex-1 border border-white rounded-3xl uppercase text-xs font-medium leading-10 bg-white/[.15] active:scale-95 transition"
+              >{{ page?.info.first_button ?? "Поработать с нами" }}</button>
             <NuxtLink to="https://t.me/DashaiLisichki"
-                class="flex-1 h-10 border border-white rounded-3xl uppercase text-xs font-medium leading-10 bg-white/[.15] active:scale-95 transition"
-                @click="closeWebApp"
-              >{{ page?.info.first_button ?? "Поработать с нами" }}</NuxtLink>
-            <NuxtLink to="https://t.me/DashaiLisichki"
-                class="flex-1 h-10 border border-white rounded-3xl uppercase text-xs font-medium leading-10 bg-white/[.15] active:scale-95 transition"
-                @click="closeWebApp"
+                class="flex-1 border border-white rounded-3xl uppercase text-xs font-medium leading-10 bg-white/[.15] active:scale-95 transition"
             >{{ page?.info.second_button ?? "Позвать в тендер"}}</NuxtLink>
           </div>
         </div>
